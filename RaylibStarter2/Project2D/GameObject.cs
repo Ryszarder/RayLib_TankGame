@@ -11,20 +11,37 @@ namespace Project2D
 {
 	class GameObject
 	{
-		protected GameObject parent = null;
+		//Parent and childern
+		protected GameObject m_Parent = null;
 		protected List<GameObject> m_Children = new List<GameObject>();
-		protected Matrix3 localTransform = new Matrix3();
-		protected Matrix3 globalTransform = new Matrix3();
-		protected Image m_Sprite;
+
+		//Matrices
+		protected Matrix3 localTransform = null;
+		protected Matrix3 globalTransform = null;
+
+		//Drawing
+		protected Image m_Image;
 		protected Texture2D m_Texture;
 
-
-		public void GetParent()
+		public GameObject(string filename)
 		{
-
+			//load image and convert to texture
+			m_Image = LoadImage(filename);
+			m_Texture = LoadTextureFromImage(m_Image);
 		}
 
-		public void SetParent()
+		public void SetParent(GameObject parent)
+		{
+			if (m_Parent != null)
+				m_Parent.m_Children.Remove(this);
+
+			m_Parent = parent;
+
+			if (m_Parent != null)
+			parent.m_Children.Add(this);
+		}
+
+		public void GetParent()
 		{
 
 		}
@@ -39,17 +56,12 @@ namespace Project2D
 
 		}
 
-		public void GetPosition()
-		{
-
-		}
-
 		public void SetPosition()
 		{
 
 		}
 
-		public void GetScale()
+		public void GetPosition()
 		{
 
 		}
@@ -59,19 +71,32 @@ namespace Project2D
 
 		}
 
-		public void Update()
+		public void GetScale()
+		{
+
+		}
+
+		public virtual void Update(float fDeltaTime)
 		{
 
 		}
 
 		public void UpdateTransforms()
 		{
+			if (m_Parent != null)
+				m_globalTransform = m_Parent.m_globalTransform * m_localTransform;
+			else
+				m_globalTransform = m_localTransform;
 
+			foreach(GameObject child in m_Children)
+			{
+				child.UpdateTransforms();
+			}
 		}
 
 		public void Draw()
 		{
-
+			Renderer.DrawTexture(m_Texture, m_globalTransform, RLColor.WHITE.ToColor());
 		}
 
 		public void OnCollision()

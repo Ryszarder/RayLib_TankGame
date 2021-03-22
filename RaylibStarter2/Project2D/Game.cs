@@ -23,6 +23,8 @@ namespace Project2D
 
         Image logo;
         Texture2D texture;
+		
+		GameObject testObject; 
 
         public Game()
         {
@@ -41,6 +43,8 @@ namespace Project2D
 			//Initialize objects here
             logo = LoadImage("../Images/aie-logo-dark.jpg");
             texture = LoadTextureFromImage(logo);
+
+			testObject = LoadImage("../Images/aie-logo-dark.jpg");
 		}
 
         public void Shutdown()
@@ -61,7 +65,9 @@ namespace Project2D
             }
             frames++;
 
-			//Update game objects here          
+			//Update game objects here    
+			testObject.Update(deltaTime);
+			testObject.UpdateTransforms();
 		}
 
         public void Draw()
