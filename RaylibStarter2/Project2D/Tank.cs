@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project2D
 {
-	class Tank : GameObject
+	class Tank
 	{
 	}
 }
