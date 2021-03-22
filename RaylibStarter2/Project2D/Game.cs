@@ -45,7 +45,6 @@ namespace Project2D
 			//texture = LoadTextureFromImage(logo);
 
 			testObject = new GameObject("../Images/Gress.png");
-			
 		}
 
         public void Shutdown()
