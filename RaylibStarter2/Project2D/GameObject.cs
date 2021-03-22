@@ -19,12 +19,12 @@ namespace Project2D
 		protected Texture2D m_Texture;
 
 
-		public void SetParent()
+		public void GetParent()
 		{
 
 		}
 
-		public void GetParent()
+		public void SetParent()
 		{
 
 		}
@@ -39,22 +39,22 @@ namespace Project2D
 
 		}
 
-		public void SetPosition()
-		{
-
-		}
-
 		public void GetPosition()
 		{
 
 		}
 
-		public void SetScale()
+		public void SetPosition()
 		{
 
 		}
 
 		public void GetScale()
+		{
+
+		}
+
+		public void SetScale()
 		{
 
 		}
