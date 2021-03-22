@@ -41,10 +41,10 @@ namespace Project2D
             }
 
 			//Initialize objects here
-            //logo = LoadImage("../Images/aie-logo-dark.jpg");
-            //texture = LoadTextureFromImage(logo);
+			//logo = LoadImage("../Images/aie-logo-dark.jpg");
+			//texture = LoadTextureFromImage(logo);
 
-			testObject = new GameObject(".../Desktop/tileable-s7002876.png");
+			testObject = new GameObject("../Images/Gress.png");
 			
 		}
 
