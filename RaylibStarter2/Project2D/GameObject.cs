@@ -16,8 +16,8 @@ namespace Project2D
 		protected List<GameObject> m_Children = new List<GameObject>();
 
 		//Matrices
-		protected Matrix3 localTransform = null;
-		protected Matrix3 globalTransform = null;
+		protected Matrix3 m_LocalTransform;
+		protected Matrix3 m_GlobalTransform;
 
 		//Drawing
 		protected Image m_Image;
@@ -28,6 +28,9 @@ namespace Project2D
 			//load image and convert to texture
 			m_Image = LoadImage(filename);
 			m_Texture = LoadTextureFromImage(m_Image);
+
+			m_LocalTransform.Identity();
+			m_GlobalTransform.Identity();
 		}
 
 		public void SetParent(GameObject parent)
@@ -84,9 +87,9 @@ namespace Project2D
 		public void UpdateTransforms()
 		{
 			if (m_Parent != null)
-				m_globalTransform = m_Parent.m_globalTransform * m_localTransform;
+				m_GlobalTransform = m_Parent.m_GlobalTransform * m_LocalTransform;
 			else
-				m_globalTransform = m_localTransform;
+				m_GlobalTransform = m_LocalTransform;
 
 			foreach(GameObject child in m_Children)
 			{
@@ -96,7 +99,7 @@ namespace Project2D
 
 		public void Draw()
 		{
-			Renderer.DrawTexture(m_Texture, m_globalTransform, RLColor.WHITE.ToColor());
+			Renderer.DrawTexture(m_Texture, m_GlobalTransform, RLColor.WHITE.ToColor());
 		}
 
 		public void OnCollision()

@@ -44,7 +44,9 @@ namespace Project2D
             logo = LoadImage("../Images/aie-logo-dark.jpg");
             texture = LoadTextureFromImage(logo);
 
-			testObject = LoadImage("../Images/aie-logo-dark.jpg");
+			testObject = new GameObject("/Desktop/tileable-s7002876.png");
+			
+
 		}
 
         public void Shutdown()
@@ -80,6 +82,8 @@ namespace Project2D
             DrawText(fps.ToString(), 10, 10, 14, RLColor.RED);
 
 			DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
+
+			testObject.Draw();
 
 			EndDrawing();
         }
