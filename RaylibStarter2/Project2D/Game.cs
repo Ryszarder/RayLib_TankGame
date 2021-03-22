@@ -68,6 +68,10 @@ namespace Project2D
 			//Update game objects here    
 			testObject.Update(deltaTime);
 			testObject.UpdateTransforms();
+
+			//check collision after all objects have been updated
+			CollisionManager.CheckCollision();
+
 		}
 
         public void Draw()

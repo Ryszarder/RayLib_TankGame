@@ -23,14 +23,23 @@ namespace Project2D
 		protected Image m_Image;
 		protected Texture2D m_Texture;
 
+		protected float m_fRadius = 0.0f;
+
 		public GameObject(string filename)
 		{
 			//load image and convert to texture
 			m_Image = LoadImage(filename);
 			m_Texture = LoadTextureFromImage(m_Image);
 
+			m_fRadius = m_Image.width * 0.5f;
+
 			m_LocalTransform.Identity();
 			m_GlobalTransform.Identity();
+
+			//m_LocalTransform.m7 = 200;
+			//m_LocalTransform.m8 = 100;
+
+			CollisionManager.AddObject(this);
 		}
 
 		public void SetParent(GameObject parent)
@@ -102,15 +111,16 @@ namespace Project2D
 			Renderer.DrawTexture(m_Texture, m_GlobalTransform, RLColor.WHITE.ToColor());
 		}
 
-		public void OnCollision()
+		public virtual void OnCollision(GameObject otherObj)
 		{
-
+			//Do object specifi stuff when colluded, e.g. destory or push stuff
 		}
 
-		public void GetRadius()
+		public float GetRadius()
 		{
-
+			return m_fRadius;
 		}
+
 
 	}
 }
