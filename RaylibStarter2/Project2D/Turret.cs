@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Project2D
 {
-	class Turret
+	class Turret : GameObject
 	{
+		public Turret(string Filename) : base(Filename)
+		{
+			this.Filename = Filename;
+		}
 	}
 }
