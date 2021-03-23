@@ -33,9 +33,12 @@ namespace Project2D
 						continue;
 
 					//test collision
-					//Vector2 difference = obj.position
+					Vector2 difference = obj.position
 
 					{
+						//folat fPenetration = combinedRadius - dist;
+						//differeence.Normalsed();
+
 						//if colliding, resovle collision
 						obj1.OnCollision(obj2);
 					}

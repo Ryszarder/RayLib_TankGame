@@ -91,9 +91,9 @@ namespace Project2D
 
 		}
 
-		public void GetPosition()
+		public Vector2 GetPosition()
 		{
-
+			return new Vector2(m_GlobalTransform.m7, m_GlobalTransform.m8);
 		}
 
 		public void SetScale()
@@ -144,7 +144,11 @@ namespace Project2D
 		public virtual void OnCollision(GameObject otherObj)
 		{
 			//Do object specifi stuff when colluded, e.g. destory or push stuff
+			//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
+
+
 		}
+
 
 		public float GetRadius()
 		{
