@@ -11,12 +11,8 @@ namespace Project2D
 {
 	class Turret : GameObject
 	{
-		private Bullet m_Bullet = null;
-
 		public Turret(string Filename) : base(Filename)
-		{
-			
-			m_Bullet.SetParent(this);
+		{	
 		}
 
 		public override void Update(float fDeltaTime)
@@ -30,9 +26,10 @@ namespace Project2D
 			{
 				fRotation += 2.0f * fDeltaTime;
 			}
-			if (IsKeyDown(KeyboardKey.KEY_SPACE))
+			if (IsKeyPressed(KeyboardKey.KEY_E))
 			{
-				m_Bullet = new Bullet("../Images/Bullet.png");
+				Bullet m_Bullet = new Bullet("../Images/Bullet.png");
+				m_Bullet.SetParent(this);
 			}
 
 			Matrix3 rotation = new Matrix3();

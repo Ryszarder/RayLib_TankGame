@@ -10,14 +10,13 @@ namespace Project2D
 	{
 		private Tank m_Tank = null;
 		
+
 		//private Turret = new Turret;
 
 		public Level() : base("")
 		{
 			m_Tank = new Tank("../Images/Tank.png");
 			m_Tank.SetParent(this);
-
-			
 		}
 	}
 }
