@@ -12,7 +12,7 @@ namespace Project2D
 
 		public Level() : base("")
 		{
-			m_Tank = new Tank("../ Images/Tank.png");
+			m_Tank = new Tank("../Images/Tank.png");
 			m_Tank.SetParent(this);
 		}
 	}
