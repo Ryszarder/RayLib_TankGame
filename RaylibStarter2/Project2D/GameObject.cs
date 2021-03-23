@@ -57,7 +57,7 @@ namespace Project2D
 
 		public void GetParent()
 		{
-
+		
 		}
 
 		public void AddChild()
@@ -94,7 +94,7 @@ namespace Project2D
 		{
 			foreach (GameObject child in m_Children)
 			{
-				//child.Update();
+				child.Update(fDeltaTime);
 			}
 		}
 

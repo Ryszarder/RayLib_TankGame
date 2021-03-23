@@ -21,8 +21,7 @@ namespace Project2D
 
         private float deltaTime = 0.005f;
 
-        Image logo;
-        Texture2D texture;
+        //Texture2D texture;
 
 		private Level m_Level = null;
 
@@ -85,7 +84,7 @@ namespace Project2D
 			//Draw game objects here
             DrawText(fps.ToString(), 10, 10, 14, RLColor.RED);
 
-			DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
+			//DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
 
 			m_Level.Draw();
 

@@ -12,8 +12,8 @@ namespace Project2D
 	class Tank : GameObject
 	{
 		private Vector2 m_v2Velocity;
-		private float m_fSpeed = 100.0f;
-		float fRotation = 0.0f;
+		private float m_fSpeed = 200.0f;
+		
 
 		public Tank(string Filename) : base(Filename)
 		{
@@ -28,14 +28,24 @@ namespace Project2D
 
 		public override void Update(float fDeltaTime)
 		{
+			float fRotation = 0.0f;
+
 			//update velocity via input
-			if(IsKeyDown(KeyboardKey.KEY_W))
+			if (IsKeyDown(KeyboardKey.KEY_W))
 			{
 				m_v2Velocity.y -= m_fSpeed * fDeltaTime;
 			}
-			if(IsKeyDown(KeyboardKey.KEY_D))
+			if (IsKeyDown(KeyboardKey.KEY_S))
 			{
-				fRotation -= m_fSpeed * fDeltaTime;
+				m_v2Velocity.y += m_fSpeed * fDeltaTime;
+			}
+			if (IsKeyDown(KeyboardKey.KEY_A))
+			{
+				fRotation -= 1.0f * fDeltaTime;
+			}
+			if (IsKeyDown(KeyboardKey.KEY_D))
+			{
+				fRotation += 1.0f * fDeltaTime;
 			}
 
 			//add velocity to our transforms
@@ -46,7 +56,6 @@ namespace Project2D
 
 			Matrix3 rotation = new Matrix3();
 			rotation.SetRotateZ(fRotation);
-
 			m_LocalTransform = m_LocalTransform * rotation;
 
 			base.Update(fDeltaTime);
