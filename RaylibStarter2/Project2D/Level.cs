@@ -17,6 +17,8 @@ namespace Project2D
 		{
 			m_Tank = new Tank("../Images/Tank.png");
 			m_Tank.SetParent(this);
+
+
 		}
 	}
 }

@@ -29,7 +29,9 @@ namespace Project2D
 			if (IsKeyPressed(KeyboardKey.KEY_E))
 			{
 				Bullet m_Bullet = new Bullet("../Images/Bullet.png");
-				m_Bullet.SetParent(this);
+				m_Bullet.SetParent(this.GetParent().GetParent());
+				m_Bullet.LocalTransform = GlobalTransform;
+			
 			}
 
 			Matrix3 rotation = new Matrix3();

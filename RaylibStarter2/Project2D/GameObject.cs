@@ -19,6 +19,19 @@ namespace Project2D
 		protected Matrix3 m_LocalTransform;
 		protected Matrix3 m_GlobalTransform;
 
+		public Matrix3 LocalTransform
+		{
+			get { return m_LocalTransform;  }
+			set { m_LocalTransform = value;  }
+		}
+
+		public Matrix3 GlobalTransform
+		{
+			get { return m_GlobalTransform; }
+			set { m_GlobalTransform = value; }
+		}
+
+
 		//Drawing
 		protected Image m_Image;
 		protected Texture2D m_Texture;
@@ -55,9 +68,12 @@ namespace Project2D
 			parent.m_Children.Add(this);
 		}
 
-		public void GetParent()
+		public GameObject GetParent()
 		{
-		
+			if (m_Parent != null)
+				return m_Parent;
+			else
+				return null;
 		}
 
 		public void AddChild()
@@ -92,9 +108,13 @@ namespace Project2D
 
 		public virtual void Update(float fDeltaTime)
 		{
-			foreach (GameObject child in m_Children)
+			//foreach (GameObject child in m_Children)
+			//{
+			//	child.Update(fDeltaTime);
+			//}
+			for (int i = 0; i < m_Children.Count; ++i)
 			{
-				child.Update(fDeltaTime);
+				m_Children[i].Update(fDeltaTime);
 			}
 		}
 
