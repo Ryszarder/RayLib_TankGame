@@ -23,9 +23,8 @@ namespace Project2D
 
         Image logo;
         Texture2D texture;
-		
-		GameObject Tank;
-		//GameObject Turret;
+
+		private Level m_Level = null;
 
         public Game()
         {
@@ -45,11 +44,7 @@ namespace Project2D
 			//logo = LoadImage("../Images/aie-logo-dark.jpg");
 			//texture = LoadTextureFromImage(logo);
 
-			//Tank image
-			Tank = new GameObject("../Images/Tank.png");
-
-			//Turret image
-			//Turret = new GameObject("../Images/Turret.png");
+			m_Level = new Level();
 		}
 
         public void Shutdown()
@@ -71,11 +66,10 @@ namespace Project2D
             frames++;
 
 			//Update game objects here    
-			Tank.Update(deltaTime);
-			Tank.UpdateTransforms();
 
-			//Turret.Update(deltaTime);
-			//Turret.UpdateTransforms();
+			m_Level.Update(deltaTime);
+			m_Level.UpdateTransforms();
+			
 
 			//check collision after all objects have been updated
 			CollisionManager.CheckCollision();
@@ -93,8 +87,7 @@ namespace Project2D
 
 			DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
 
-			Tank.Draw();
-			//Turret.Draw();
+			m_Level.Draw();
 
 			EndDrawing();
         }

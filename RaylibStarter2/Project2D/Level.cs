@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Project2D
 {
-	class Level
+	class Level : GameObject
 	{
-		
+		private Tank m_Tank = null;
+
+		public Level() : base("")
+		{
+			m_Tank = new Tank("../ Images/Tank.png");
+			m_Tank.SetParent(this);
+		}
 	}
 }

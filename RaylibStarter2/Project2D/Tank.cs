@@ -13,9 +13,12 @@ namespace Project2D
 	{
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
+		
 
-		public Tank(string filename) : base(filename)
+		public Tank(string Filename) : base(Filename)
 		{
+			this.Filename = Filename;
+
 			m_LocalTransform.m7 = 200;
 			m_LocalTransform.m8 = 100;
 
@@ -26,6 +29,7 @@ namespace Project2D
 		public override void Update(float fDeltaTime)
 		{
 			float fRotation = 0.0f;
+
 			//update velocity via input
 			if(IsKeyDown(KeyboardKey.KEY_W))
 			{

@@ -25,10 +25,12 @@ namespace Project2D
 
 		protected float m_fRadius = 0.0f;
 
-		public GameObject(string filename)
+		protected string Filename;
+
+		public GameObject(string Filename)
 		{
 			//load image and convert to texture
-			m_Image = LoadImage(filename);
+			m_Image = LoadImage(Filename);
 			m_Texture = LoadTextureFromImage(m_Image);
 
 			m_fRadius = m_Image.width * 0.5f;
