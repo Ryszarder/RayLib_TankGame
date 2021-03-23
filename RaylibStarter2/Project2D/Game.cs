@@ -25,7 +25,7 @@ namespace Project2D
         Texture2D texture;
 		
 		GameObject Tank;
-		GameObject Turret;
+		//GameObject Turret;
 
         public Game()
         {
@@ -49,7 +49,7 @@ namespace Project2D
 			Tank = new GameObject("../Images/Tank.png");
 
 			//Turret image
-			Turret = new GameObject("../Images/Turret.png");
+			//Turret = new GameObject("../Images/Turret.png");
 		}
 
         public void Shutdown()
@@ -74,8 +74,8 @@ namespace Project2D
 			Tank.Update(deltaTime);
 			Tank.UpdateTransforms();
 
-			Turret.Update(deltaTime);
-			Turret.UpdateTransforms();
+			//Turret.Update(deltaTime);
+			//Turret.UpdateTransforms();
 
 			//check collision after all objects have been updated
 			CollisionManager.CheckCollision();
@@ -94,7 +94,7 @@ namespace Project2D
 			DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
 
 			Tank.Draw();
-			Turret.Draw();
+			//Turret.Draw();
 
 			EndDrawing();
         }

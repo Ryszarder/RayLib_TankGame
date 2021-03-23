@@ -90,7 +90,10 @@ namespace Project2D
 
 		public virtual void Update(float fDeltaTime)
 		{
-
+			foreach (GameObject child in m_Children)
+			{
+				//child.Update();
+			}
 		}
 
 		public void UpdateTransforms()
@@ -109,6 +112,11 @@ namespace Project2D
 		public void Draw()
 		{
 			Renderer.DrawTexture(m_Texture, m_GlobalTransform, RLColor.WHITE.ToColor());
+
+			foreach (GameObject child in m_Children)
+			{
+				child.Draw();
+			}
 		}
 
 		public virtual void OnCollision(GameObject otherObj)

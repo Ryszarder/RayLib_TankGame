@@ -8,5 +8,6 @@ namespace Project2D
 {
 	class Level
 	{
+		
 	}
 }
