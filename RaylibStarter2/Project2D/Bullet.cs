@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Project2D
 {
-	class Bullet
+	class Bullet : GameObject
 	{
+		public Bullet(string Filename) : base(Filename)
+		{
+		}
 	}
 }

@@ -13,17 +13,19 @@ namespace Project2D
 	{
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
-		
+		private Turret m_Turret = null;
+
 
 		public Tank(string Filename) : base(Filename)
 		{
-			this.Filename = Filename;
-
 			m_LocalTransform.m7 = 300;
 			m_LocalTransform.m8 = 300;
 
 			m_v2Velocity.x = 0;
 			m_v2Velocity.y = 0;
+
+			m_Turret = new Turret("../Images/Turret.png");
+			m_Turret.SetParent(this);
 		}
 
 		public override void Update(float fDeltaTime)
@@ -41,17 +43,16 @@ namespace Project2D
 			}
 			if (IsKeyDown(KeyboardKey.KEY_A))
 			{
-				fRotation -= 1.0f * fDeltaTime;
+				fRotation -= 2.0f * fDeltaTime;
 			}
 			if (IsKeyDown(KeyboardKey.KEY_D))
 			{
-				fRotation += 1.0f * fDeltaTime;
+				fRotation += 2.0f * fDeltaTime;
 			}
 
 			//add velocity to our transforms
 			Matrix3 translation = new Matrix3();
 			translation.SetTranslation(m_v2Velocity * fDeltaTime);
-
 			m_LocalTransform = m_LocalTransform * translation;
 
 			Matrix3 rotation = new Matrix3();
