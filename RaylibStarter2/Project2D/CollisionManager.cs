@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Raylib;
+using static Raylib.Raylib;
 using MathClasses;
 
 namespace Project2D
@@ -33,8 +35,10 @@ namespace Project2D
 						continue;
 
 					//test collision
-					Vector2 difference = obj.position
-
+					Vector2 difference = obj1.GetPosition() - obj2.GetPosition();
+					float dist = difference.Magnitude();
+					float combinedRaduis = obj1.GetRadius() + obj2.GetRadius();
+					if(dist < combinedRaduis)
 					{
 						//folat fPenetration = combinedRadius - dist;
 						//differeence.Normalsed();

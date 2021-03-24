@@ -31,12 +31,12 @@ namespace Project2D
 			set { m_GlobalTransform = value; }
 		}
 
-
 		//Drawing
 		protected Image m_Image;
 		protected Texture2D m_Texture;
 
 		protected float m_fRadius = 0.0f;
+		//protected Vector2 m_v2PrevPosition;
 
 		protected string Filename;
 
@@ -93,7 +93,7 @@ namespace Project2D
 
 		public Vector2 GetPosition()
 		{
-			return new Vector2(m_GlobalTransform.m7, m_GlobalTransform.m8);
+			return new Vector2(m_GlobalTransform.m7 + m_GlobalTransform.m8);
 		}
 
 		public void SetScale()
@@ -129,6 +129,8 @@ namespace Project2D
 			{
 				child.UpdateTransforms();
 			}
+
+			//m_v2PrevPosition.x = GetPosition() - m_Parent.GetPosition();
 		}
 
 		public void Draw()
@@ -141,7 +143,7 @@ namespace Project2D
 			}
 		}
 
-		public virtual void OnCollision(GameObject otherObj)
+		public virtual void OnCollision(GameObject otherObj)// float fPenetration, Vector2 v2HitDirection
 		{
 			//Do object specifi stuff when colluded, e.g. destory or push stuff
 			//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
