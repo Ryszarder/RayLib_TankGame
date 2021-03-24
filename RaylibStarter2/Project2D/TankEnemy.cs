@@ -61,6 +61,7 @@ namespace Project2D
 		{	
 			//m_LocalTransform.m7 = m_v2PrevPosition.x;
 			//m_LocalTransform.m8 = m_v2PrevPosition.y;
+
 			////	//Circle collision - calaulate normal
 			//Vector2 v2Normal = otherObj.GetPosition() - GetPosition();
 			//v2Normal.Normalise();
