@@ -13,6 +13,7 @@ namespace Project2D
 	{
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
+		private Vector2 m_v2PrevPosition;
 
 		public TankEnemy(string Filename) : base(Filename)
 		{
@@ -55,6 +56,20 @@ namespace Project2D
 			m_LocalTransform = m_LocalTransform * rotation;
 
 			base.Update(fDeltaTime);
+		}
+		public override void OnCollision(GameObject otherObj)
+		{	
+			//m_LocalTransform.m7 = m_v2PrevPosition.x;
+			//m_LocalTransform.m8 = m_v2PrevPosition.y;
+			////	//Circle collision - calaulate normal
+			//Vector2 v2Normal = otherObj.GetPosition() - GetPosition();
+			//v2Normal.Normalise();
+
+			////	////Calaulate reflection
+			//Vector2 reflection = -2.0f * m_v2Velocity.Dot(v2Normal) * v2Normal + m_v2Velocity;
+
+			////	////Change dircetion
+			//m_v2Velocity = reflection;
 		}
 	}
 }

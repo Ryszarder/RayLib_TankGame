@@ -14,6 +14,7 @@ namespace Project2D
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
 		private Turret m_Turret = null;
+		private Vector2 m_v2PrevPosition;
 
 
 		public Tank(string Filename) : base(Filename)
@@ -24,7 +25,7 @@ namespace Project2D
 			m_v2Velocity.x = 0;
 			m_v2Velocity.y = 0;
 
-			m_Turret = new Turret("../Images/Turret.png");
+		   m_Turret = new Turret("../Images/Turret.png");
 			m_Turret.SetParent(this);
 		}
 
@@ -64,22 +65,22 @@ namespace Project2D
 
 		public override void OnCollision(GameObject otherObj)
 		{
-			//	//push apart
-			//	//m_LocalTransform.m7 = m_v2PrevPosition.x;
-			//	//m_LocalTransform.m8 = m_v2PrevPosition.y;
+			//push apart
+			//m_LocalTransform.m7 = m_v2PrevPosition.x;
+			//m_LocalTransform.m8 = m_v2PrevPosition.y;
 
-			//	//Circle collision - calaulate normal
-			Vector2 v2Normal = otherObj.GetPosition() - GetPosition();
-			v2Normal.Normalise();
+			////	//Circle collision - calaulate normal
+			//Vector2 v2Normal = otherObj.GetPosition() - GetPosition();
+			//v2Normal.Normalise();
 
-			//Calaulate reflection
-			Vector2 reflection = -2.0f * m_v2Velocity.Dot(v2Normal) * v2Normal + m_v2Velocity;
+			////	//Calaulate reflection
+			//Vector2 reflection = -2.0f * m_v2Velocity.Dot(v2Normal) * v2Normal + m_v2Velocity;
 
-			//Change dircetion
-			m_v2Velocity = reflection;
+			////	//Change dircetion
+			//m_v2Velocity = reflection;
 
-			//	//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
-			//}
+			//	//	//	//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
+			//	//	
 		}
 	}
 }
