@@ -40,7 +40,6 @@ namespace Project2D
 			m_LocalTransform = m_LocalTransform * rotation;
 
 			base.Update(fDeltaTime);
-
 		}
 	}
 }
