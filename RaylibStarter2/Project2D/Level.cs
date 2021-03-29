@@ -9,8 +9,8 @@ namespace Project2D
 	class Level : GameObject
 	{
 		private Tank m_Tank = null;
-		//private TankEnemy m_TankEnemy = null;
-
+		private TankEnemy m_TankEnemy = null;
+		 
 		//private Turret = new Turret;
 
 		public Level() : base("")
@@ -18,8 +18,8 @@ namespace Project2D
 			m_Tank = new Tank("../Images/Tank.png");
 			m_Tank.SetParent(this);
 
-			//m_TankEnemy = new TankEnemy("../Images/TankE.png");
-			//m_TankEnemy.SetParent(this);
+			m_TankEnemy = new TankEnemy("../Images/TankE.png");
+			m_TankEnemy.SetParent(this);
 		}
 	}
 }

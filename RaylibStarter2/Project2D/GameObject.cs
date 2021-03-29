@@ -35,10 +35,16 @@ namespace Project2D
 		protected Image m_Image;
 		protected Texture2D m_Texture;
 
-		protected float m_fRadius = 0.0f;
+		//protected float m_fRadius = 0.0f;
 		//protected Vector2 m_v2PrevPosition;
 
-		protected string Filename;
+		//protected string Filename;
+
+		//Collision
+		//protected bool m_bEnableCollision = true;
+		protected Vector2 m_v2Min;
+		protected Vector2 m_v2Max;
+		protected Vector2 m_v2PrevPosition;
 
 		public GameObject(string Filename)
 		{
@@ -46,7 +52,13 @@ namespace Project2D
 			m_Image = LoadImage(Filename);
 			m_Texture = LoadTextureFromImage(m_Image);
 
-			m_fRadius = m_Image.width * 0.5f;
+			m_v2Min.x = -(m_Texture.width * 0.5f);
+			m_v2Min.y = -(m_Texture.height * 0.5f);
+
+			m_v2Max.x = (m_Texture.width * 0.5f);
+			m_v2Max.y = (m_Texture.height * 0.5f);
+
+			//m_fRadius = m_Image.width * 0.5f;
 
 			m_LocalTransform.Identity();
 			m_GlobalTransform.Identity();
@@ -121,6 +133,11 @@ namespace Project2D
 		public void UpdateTransforms()
 		{
 			if (m_Parent != null)
+				m_v2PrevPosition = GetPosition() - m_Parent.GetPosition();
+			else
+				m_v2PrevPosition = GetPosition();
+
+			if (m_Parent != null)
 				m_GlobalTransform = m_Parent.m_GlobalTransform * m_LocalTransform;
 			else
 				m_GlobalTransform = m_LocalTransform;
@@ -129,8 +146,7 @@ namespace Project2D
 			{
 				child.UpdateTransforms();
 			}
-
-			//m_v2PrevPosition.x = GetPosition() - m_Parent.GetPosition();
+			
 		}
 
 		public void Draw()
@@ -150,9 +166,19 @@ namespace Project2D
 		}
 
 
-		public float GetRadius()
+		//public float GetRadius()
+		//{
+		//	return m_fRadius;
+		//}
+
+		public Vector2 GetMin()
 		{
-			return m_fRadius;
+			return m_v2Min;
+		}
+
+		public Vector2 GetMax()
+		{
+			return m_v2Max;
 		}
 
 

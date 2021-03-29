@@ -14,7 +14,7 @@ namespace Project2D
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
 		private Turret m_Turret = null;
-		private Vector2 m_v2PrevPosition;
+		//private Vector2 m_v2PrevPosition;
 
 
 		public Tank(string Filename) : base(Filename)
@@ -25,7 +25,7 @@ namespace Project2D
 			m_v2Velocity.x = 0;
 			m_v2Velocity.y = 0;
 
-		   m_Turret = new Turret("../Images/Turret.png");
+			 m_Turret = new Turret("../Images/Turret.png");
 			m_Turret.SetParent(this);
 		}
 
@@ -82,7 +82,18 @@ namespace Project2D
 			//	//	//	//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
 			//	//	
 
+			//m_v2Velocity.x = -1000;
 
+			m_LocalTransform.m7 = m_v2PrevPosition.x;
+			m_LocalTransform.m8 = m_v2PrevPosition.y;
+			//stop in place
+			m_v2Velocity.x = 0;
+			m_v2Velocity.y = 0;
+			
+			UpdateTransforms();
+
+			//bounce off
+			//m_v2Velocity = m_v2Velocity * -0.5f;
 		}
 	}
 }

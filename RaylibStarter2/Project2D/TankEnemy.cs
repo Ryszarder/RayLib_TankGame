@@ -13,7 +13,6 @@ namespace Project2D
 	{
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
-		private Vector2 m_v2PrevPosition;
 
 		public TankEnemy(string Filename) : base(Filename)
 		{
@@ -58,7 +57,7 @@ namespace Project2D
 			base.Update(fDeltaTime);
 		}
 		public override void OnCollision(GameObject otherObj)
-		{	
+		{
 			//m_LocalTransform.m7 = m_v2PrevPosition.x;
 			//m_LocalTransform.m8 = m_v2PrevPosition.y;
 
@@ -71,6 +70,16 @@ namespace Project2D
 
 			////	////Change dircetion
 			//m_v2Velocity = reflection;
+
+			//m_v2Velocity.x = -1000;
+
+			m_LocalTransform.m7 = m_v2PrevPosition.x;
+			m_LocalTransform.m8 = m_v2PrevPosition.y;
+
+			m_v2Velocity.x = 0;
+			m_v2Velocity.y = 0;
+
+			UpdateTransforms();
 		}
 	}
 }

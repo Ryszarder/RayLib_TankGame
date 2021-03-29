@@ -11,11 +11,6 @@ namespace Project2D
 {
 	static class CollisionManager
 	{
-		//public Vector2 m_v2Centre = new Vector2();
-		//public float m_fRadius = 0.0f;
-
-		//public CollisionManager(Vector2 v2Centre,)
-
 		private static List<GameObject> m_ObjectList = new List<GameObject>();
 
 		public static void AddObject(GameObject obj)
@@ -34,18 +29,34 @@ namespace Project2D
 					if (obj1 == obj2)
 						continue;
 
-					////test collision
+					//////test collision
 					//Vector2 difference = obj1.GetPosition() - obj2.GetPosition();
 					//float dist = difference.Magnitude();
 					//float combinedRaduis = obj1.GetRadius() + obj2.GetRadius();
-					//if(dist < combinedRaduis)
+					//if (dist < combinedRaduis)
 					//{
-					//	//folat fPenetration = combinedRadius - dist;
-					//	//differeence.Normalsed();
+					//	//	//folat fPenetration = combinedRadius - dist;
+					//	//	//differeence.Normalsed();
 
 					//	//if colliding, resovle collision
 					//	obj1.OnCollision(obj2);
 					//}
+
+					Vector2 obj1Min = obj1.GetMin() + obj1.GetPosition();
+					Vector2 obj1Max = obj1.GetMax() + obj1.GetPosition();
+					Vector2 obj2Min = obj2.GetMin() + obj2.GetPosition();
+					Vector2 obj2Max = obj2.GetMax() + obj2.GetPosition();
+
+					if (obj1Max.x > obj2Min.x &&
+						obj1Max.y > obj2Min.y &&
+						obj1Min.x < obj2Max.x &&
+						obj1Min.y < obj2Max.y)
+					{
+						obj1.OnCollision(obj2);
+					}
+
+
+
 				}
 			}
 		}
