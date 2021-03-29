@@ -11,6 +11,7 @@ namespace Project2D
 {
 	class Turret : GameObject
 	{
+
 		public Turret(string Filename) : base(Filename)
 		{	
 		}
@@ -31,7 +32,6 @@ namespace Project2D
 				Bullet m_Bullet = new Bullet("../Images/Bullet.png");
 				m_Bullet.SetParent(this.GetParent().GetParent());
 				m_Bullet.LocalTransform = GlobalTransform;
-			
 			}
 
 			Matrix3 rotation = new Matrix3();

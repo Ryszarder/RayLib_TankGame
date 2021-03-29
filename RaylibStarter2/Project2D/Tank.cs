@@ -25,7 +25,7 @@ namespace Project2D
 			m_v2Velocity.x = 0;
 			m_v2Velocity.y = 0;
 
-			 m_Turret = new Turret("../Images/Turret.png");
+			m_Turret = new Turret("../Images/Turret.png");
 			m_Turret.SetParent(this);
 		}
 
@@ -86,14 +86,15 @@ namespace Project2D
 
 			m_LocalTransform.m7 = m_v2PrevPosition.x;
 			m_LocalTransform.m8 = m_v2PrevPosition.y;
+
 			//stop in place
-			m_v2Velocity.x = 0;
-			m_v2Velocity.y = 0;
-			
-			UpdateTransforms();
+			//m_v2Velocity.x = 0;
+			//m_v2Velocity.y = 0;
 
 			//bounce off
-			//m_v2Velocity = m_v2Velocity * -0.5f;
+			m_v2Velocity = m_v2Velocity * -1;
+
+			UpdateTransforms();
 		}
 	}
 }

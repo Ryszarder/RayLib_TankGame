@@ -76,8 +76,10 @@ namespace Project2D
 			m_LocalTransform.m7 = m_v2PrevPosition.x;
 			m_LocalTransform.m8 = m_v2PrevPosition.y;
 
-			m_v2Velocity.x = 0;
-			m_v2Velocity.y = 0;
+			//m_v2Velocity.x = 0;
+			//m_v2Velocity.y = 0;
+
+			m_v2Velocity = m_v2Velocity * -1f;
 
 			UpdateTransforms();
 		}

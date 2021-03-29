@@ -35,7 +35,7 @@ namespace Project2D
 		protected Image m_Image;
 		protected Texture2D m_Texture;
 
-		//protected float m_fRadius = 0.0f;
+		//protected float m_fRadius = 0.5f;
 		//protected Vector2 m_v2PrevPosition;
 
 		//protected string Filename;
@@ -105,7 +105,7 @@ namespace Project2D
 
 		public Vector2 GetPosition()
 		{
-			return new Vector2(m_GlobalTransform.m7 , m_GlobalTransform.m8);
+			return new Vector2(m_LocalTransform.m7 , m_LocalTransform.m8);
 		}
 
 		public void SetScale()
