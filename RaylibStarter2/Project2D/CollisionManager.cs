@@ -34,19 +34,18 @@ namespace Project2D
 					if (obj1 == obj2)
 						continue;
 
-					//test collision
-					Vector2 difference = obj1.GetPosition() - obj2.GetPosition();
-					float dist = difference.Magnitude();
-					float combinedRaduis = obj1.GetRadius() + obj2.GetRadius();
-					if(dist < combinedRaduis)
-					{
-						//folat fPenetration = combinedRadius - dist;
-						//differeence.Normalsed();
+					////test collision
+					//Vector2 difference = obj1.GetPosition() - obj2.GetPosition();
+					//float dist = difference.Magnitude();
+					//float combinedRaduis = obj1.GetRadius() + obj2.GetRadius();
+					//if(dist < combinedRaduis)
+					//{
+					//	//folat fPenetration = combinedRadius - dist;
+					//	//differeence.Normalsed();
 
-						//if colliding, resovle collision
-						obj1.OnCollision(obj2);
-					}
-					
+					//	//if colliding, resovle collision
+					//	obj1.OnCollision(obj2);
+					//}
 				}
 			}
 		}

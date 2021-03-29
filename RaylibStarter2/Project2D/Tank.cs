@@ -81,6 +81,8 @@ namespace Project2D
 
 			//	//	//	//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
 			//	//	
+
+
 		}
 	}
 }

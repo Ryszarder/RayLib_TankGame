@@ -143,7 +143,7 @@ namespace Project2D
 			}
 		}
 
-		public virtual void OnCollision(GameObject otherObj )// float fPenetration, Vector2 v2HitDirection
+		public virtual void OnCollision(GameObject otherObj)// float fPenetration, Vector2 v2HitDirection
 		{
 			//Do object specifi stuff when colluded, e.g. destory or push stuff
 			//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
