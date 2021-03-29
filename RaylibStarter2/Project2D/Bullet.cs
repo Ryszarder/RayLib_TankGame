@@ -25,5 +25,11 @@ namespace Project2D
 
 			base.Update(fDeltaTime);
 		}
+
+		public void OffSet()
+		{
+			m_LocalTransform.m7 -= m_LocalTransform.m4 * 50;
+			m_LocalTransform.m8 -= m_LocalTransform.m5 * 50;
+		}
 	}
 }

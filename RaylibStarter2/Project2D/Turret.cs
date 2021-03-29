@@ -32,6 +32,7 @@ namespace Project2D
 				Bullet m_Bullet = new Bullet("../Images/Bullet.png");
 				m_Bullet.SetParent(this.GetParent().GetParent());
 				m_Bullet.LocalTransform = GlobalTransform;
+				m_Bullet.OffSet();
 			}
 
 			Matrix3 rotation = new Matrix3();
