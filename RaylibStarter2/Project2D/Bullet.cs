@@ -11,7 +11,7 @@ namespace Project2D
 {
 	class Bullet : GameObject
 	{
-		private Vector2 m_v2Velocity = new Vector2(0, -200);
+		private Vector2 m_v2Velocity = new Vector2(-200, 0);
 
 		public Bullet(string Filename) : base(Filename)
 		{
