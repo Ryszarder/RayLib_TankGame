@@ -11,7 +11,7 @@ namespace Project2D
 {
 	class Bullet : GameObject
 	{
-		private Vector2 m_v2Velocity = new Vector2(0, -200);
+		private Vector2 m_v2Velocity = new Vector2(0, -700);
 
 		public Bullet(string Filename) : base(Filename)
 		{
@@ -28,8 +28,8 @@ namespace Project2D
 
 		public void OffSet()
 		{
-			m_LocalTransform.m7 -= m_LocalTransform.m4 * 50;
-			m_LocalTransform.m8 -= m_LocalTransform.m5 * 50;
+			m_LocalTransform.m7 -= m_LocalTransform.m4 * 60;
+			m_LocalTransform.m8 -= m_LocalTransform.m5 * 60;
 		}
 	}
 }

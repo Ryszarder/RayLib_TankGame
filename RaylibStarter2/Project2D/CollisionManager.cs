@@ -29,19 +29,6 @@ namespace Project2D
 					if (obj1 == obj2)
 						continue;
 
-					//////test collision
-					//Vector2 difference = obj1.GetPosition() - obj2.GetPosition();
-					//float dist = difference.Magnitude();
-					//float combinedRaduis = obj1.GetRadius() + obj2.GetRadius();
-					//if (dist < combinedRaduis)
-					//{
-					//	//	//folat fPenetration = combinedRadius - dist;
-					//	//	//differeence.Normalsed();
-
-					//	//if colliding, resovle collision
-					//	obj1.OnCollision(obj2);
-					//}
-
 					Vector2 obj1Min = obj1.GetMin() + obj1.GetPosition();
 					Vector2 obj1Max = obj1.GetMax() + obj1.GetPosition();
 					Vector2 obj2Min = obj2.GetMin() + obj2.GetPosition();
@@ -54,9 +41,6 @@ namespace Project2D
 					{
 						obj1.OnCollision(obj2);
 					}
-
-
-
 				}
 			}
 		}

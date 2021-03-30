@@ -14,8 +14,8 @@ namespace Project2D
         {
             Game game = new Game();
 
-            InitWindow(800, 600, "Hello World");
-
+            InitWindow(1280, 720, "Hello World");
+			
             game.Init();
 
             while (!WindowShouldClose())

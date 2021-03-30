@@ -35,13 +35,7 @@ namespace Project2D
 		protected Image m_Image;
 		protected Texture2D m_Texture;
 
-		//protected float m_fRadius = 0.5f;
-		//protected Vector2 m_v2PrevPosition;
-
-		//protected string Filename;
-
 		//Collision
-		//protected bool m_bEnableCollision = true;
 		protected Vector2 m_v2Min;
 		protected Vector2 m_v2Max;
 		protected Vector2 m_v2PrevPosition;
@@ -58,13 +52,8 @@ namespace Project2D
 			m_v2Max.x = (m_Texture.width * 0.5f);
 			m_v2Max.y = (m_Texture.height * 0.5f);
 
-			//m_fRadius = m_Image.width * 0.5f;
-
 			m_LocalTransform.Identity();
 			m_GlobalTransform.Identity();
-
-			//m_LocalTransform.m7 = 200;
-			//m_LocalTransform.m8 = 100;
 
 			CollisionManager.AddObject(this);
 		}
@@ -120,10 +109,6 @@ namespace Project2D
 
 		public virtual void Update(float fDeltaTime)
 		{
-			//foreach (GameObject child in m_Children)
-			//{
-			//	child.Update(fDeltaTime);
-			//}
 			for (int i = 0; i < m_Children.Count; ++i)
 			{
 				m_Children[i].Update(fDeltaTime);
@@ -161,15 +146,7 @@ namespace Project2D
 
 		public virtual void OnCollision(GameObject otherObj)// float fPenetration, Vector2 v2HitDirection
 		{
-			//Do object specifi stuff when colluded, e.g. destory or push stuff
-			//Vector2 relfection = -2 * (dot(vel, normal) * normal + vel;
 		}
-
-
-		//public float GetRadius()
-		//{
-		//	return m_fRadius;
-		//}
 
 		public Vector2 GetMin()
 		{
@@ -180,7 +157,5 @@ namespace Project2D
 		{
 			return m_v2Max;
 		}
-
-
 	}
 }

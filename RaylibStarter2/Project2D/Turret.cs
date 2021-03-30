@@ -19,15 +19,15 @@ namespace Project2D
 		public override void Update(float fDeltaTime)
 		{
 			float fRotation = 0.0f;
-			if (IsKeyDown(KeyboardKey.KEY_LEFT))
+			if (IsKeyDown(KeyboardKey.KEY_Q))
 			{
 				fRotation -= 2.0f * fDeltaTime;
 			}
-			if (IsKeyDown(KeyboardKey.KEY_RIGHT))
+			if (IsKeyDown(KeyboardKey.KEY_E))
 			{
 				fRotation += 2.0f * fDeltaTime;
 			}
-			if (IsKeyPressed(KeyboardKey.KEY_E))
+			if (IsKeyPressed(KeyboardKey.KEY_SPACE))
 			{
 				Bullet m_Bullet = new Bullet("../Images/Bullet.png");
 				m_Bullet.SetParent(this.GetParent().GetParent());

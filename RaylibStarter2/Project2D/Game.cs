@@ -21,8 +21,6 @@ namespace Project2D
 
         private float deltaTime = 0.005f;
 
-        //Texture2D texture;
-
 		private Level m_Level = null;
 
         public Game()
@@ -40,9 +38,6 @@ namespace Project2D
             }
 
 			//Initialize objects here
-			//logo = LoadImage("../Images/aie-logo-dark.jpg");
-			//texture = LoadTextureFromImage(logo);
-
 			m_Level = new Level();
 		}
 
@@ -69,22 +64,18 @@ namespace Project2D
 			m_Level.Update(deltaTime);
 			m_Level.UpdateTransforms();
 			
-
 			//check collision after all objects have been updated
 			CollisionManager.CheckCollision();
-
 		}
 
         public void Draw()
         {
             BeginDrawing();
 
-            ClearBackground(RLColor.WHITE);
+            ClearBackground(RLColor.LIGHTGRAY);
 
 			//Draw game objects here
-            DrawText(fps.ToString(), 10, 10, 14, RLColor.RED);
-
-			//DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
+            DrawText(fps.ToString(), 10, 10, 14, RLColor.BLUE);
 
 			m_Level.Draw();
 
