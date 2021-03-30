@@ -10,8 +10,7 @@ namespace Project2D
 	{
 		private Tank m_Tank = null;
 		private TankEnemy m_TankEnemy = null;
-		 
-		//private Turret = new Turret;
+		private Grid m_Grid = null;
 
 		public Level() : base("")
 		{
@@ -20,6 +19,9 @@ namespace Project2D
 
 			m_TankEnemy = new TankEnemy("../Images/TankE.png");
 			m_TankEnemy.SetParent(this);
+
+			m_Grid = new Grid("../Image/Box.png");
+			m_Grid.SetParent(this);
 		}
 	}
 }
