@@ -31,6 +31,8 @@ namespace Project2D
 
 			m_nScore++;
 
+			//DrawText(Convert.ToString(m_nScore), 780, 20, 20, RLColor.BLACK);
+
 			UpdateTransforms();
 		}
 	}

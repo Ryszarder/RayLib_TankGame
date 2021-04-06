@@ -28,7 +28,6 @@ namespace Project2D
 				m_Grid = new Grid("../Images/Box.png");
 				m_Grid.SetParent(this);
 			}
-			
 		}
 	}
 }

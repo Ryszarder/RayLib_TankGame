@@ -23,7 +23,9 @@ namespace Project2D
 
 		private Level m_Level = null;
 
-        public Game()
+		private int m_nScore = 0;
+
+		public Game()
         {
         }
 
