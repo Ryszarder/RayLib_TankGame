@@ -23,8 +23,6 @@ namespace Project2D
 
 		private Level m_Level = null;
 
-		private int m_nScore = 0;
-
 		public Game()
         {
         }
@@ -69,7 +67,7 @@ namespace Project2D
 			//check collision after all objects have been updated
 			CollisionManager.CheckCollision();
 
-			ScoreManager.SetScore();
+			//ScoreManager.SetScore();
 		}
 
         public void Draw()

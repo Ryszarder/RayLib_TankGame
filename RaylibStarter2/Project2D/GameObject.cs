@@ -40,7 +40,7 @@ namespace Project2D
 		protected Vector2 m_v2Max;
 		protected Vector2 m_v2PrevPosition;
 
-		protected int m_nScore;
+		protected int m_nScore = 0;
 
 		public GameObject(string Filename)
 		{
@@ -144,7 +144,7 @@ namespace Project2D
 				child.Draw();
 			}
 
-			//DrawText(Convert.ToString(m_nScore), 780, 20, 20, RLColor.BLACK);
+			DrawText(m_nScore.ToString(), 780, 20, 20, RLColor.BLACK);
 		}
 
 		public virtual void OnCollision(GameObject otherObj)// float fPenetration, Vector2 v2HitDirection

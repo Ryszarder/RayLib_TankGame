@@ -11,11 +11,11 @@ namespace Project2D
 {
 	static class ScoreManager
 	{
-		public static void SetScore()
-		{
-			int m_nScore = 0;
+		//public static void SetScore()
+		//{
+		//	int m_nScore = 0;
 
-			DrawText(Convert.ToString(m_nScore), 780, 20, 20, RLColor.BLACK);
-		}
+		//	DrawText(Convert.ToString(m_nScore), 780, 20, 20, RLColor.BLACK);
+		//}
 	}
 }
