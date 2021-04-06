@@ -23,11 +23,12 @@ namespace Project2D
 			//m_TankEnemy = new TankEnemy("../Images/TankE.png");
 			//m_TankEnemy.SetParent(this);
 
-			m_Grid = new Grid("../Image/Box.png");
-			m_Grid.SetParent(this);
-
+			for (int i = 0; i < 5; i++)
+			{
+				m_Grid = new Grid("../Images/Box.png");
+				m_Grid.SetParent(this);
+			}
 			
-
 		}
 	}
 }

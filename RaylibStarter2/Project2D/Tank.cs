@@ -17,7 +17,7 @@ namespace Project2D
 
 		public Tank(string Filename) : base(Filename)
 		{
-			m_LocalTransform.m7 = 300;
+			m_LocalTransform.m7 = 400;
 			m_LocalTransform.m8 = 300;
 
 			m_v2Velocity.x = 0;

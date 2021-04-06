@@ -40,6 +40,8 @@ namespace Project2D
 		protected Vector2 m_v2Max;
 		protected Vector2 m_v2PrevPosition;
 
+		protected int m_nScore;
+
 		public GameObject(string Filename)
 		{
 			//load image and convert to texture
@@ -136,6 +138,8 @@ namespace Project2D
 
 		public void Draw()
 		{
+			DrawText(m_nScore.ToString(), 780, 20, 20, RLColor.BLACK);
+
 			Renderer.DrawTexture(m_Texture, m_GlobalTransform, RLColor.WHITE.ToColor());
 
 			foreach (GameObject child in m_Children)
