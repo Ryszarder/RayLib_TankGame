@@ -68,6 +68,8 @@ namespace Project2D
 			
 			//check collision after all objects have been updated
 			CollisionManager.CheckCollision();
+
+			ScoreManager.SetScore();
 		}
 
         public void Draw()

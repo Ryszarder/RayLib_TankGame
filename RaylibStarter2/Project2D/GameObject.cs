@@ -40,7 +40,7 @@ namespace Project2D
 		protected Vector2 m_v2Max;
 		protected Vector2 m_v2PrevPosition;
 
-		//protected int m_nScore;
+		protected int m_nScore;
 
 		public GameObject(string Filename)
 		{

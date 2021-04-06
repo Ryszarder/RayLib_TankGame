@@ -29,7 +29,7 @@ namespace Project2D
 			m_LocalTransform.m7 = m_nWidth;
 			m_LocalTransform.m8 = m_nHeight;
 
-			//m_nScore++;
+			ScoreManager.AddScore();
 
 			//DrawText(Convert.ToString(m_nScore), 780, 20, 20, RLColor.BLACK);
 
