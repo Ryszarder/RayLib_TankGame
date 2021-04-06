@@ -138,14 +138,17 @@ namespace Project2D
 
 		public void Draw()
 		{
-			DrawText(m_nScore.ToString(), 780, 20, 20, RLColor.BLACK);
-
 			Renderer.DrawTexture(m_Texture, m_GlobalTransform, RLColor.WHITE.ToColor());
 
 			foreach (GameObject child in m_Children)
 			{
 				child.Draw();
 			}
+		}
+
+		public virtual void Draw(GameObject draw)
+		{
+
 		}
 
 		public virtual void OnCollision(GameObject otherObj)// float fPenetration, Vector2 v2HitDirection
