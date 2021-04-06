@@ -143,7 +143,8 @@ namespace Project2D
 			{
 				child.Draw();
 			}
-				//DrawText(Convert.ToString(m_nScore), 780, 20, 20, RLColor.BLACK);
+
+			//DrawText(Convert.ToString(m_nScore), 780, 20, 20, RLColor.BLACK);
 		}
 
 		public virtual void OnCollision(GameObject otherObj)// float fPenetration, Vector2 v2HitDirection
