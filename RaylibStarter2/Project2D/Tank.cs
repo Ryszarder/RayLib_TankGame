@@ -40,13 +40,13 @@ namespace Project2D
 			if (IsKeyDown(KeyboardKey.KEY_W))
 			{
 				//Takes the answer from the multiplication and takes it away from m_v2Velocity value
-				//Meaning when the Key is press it goes forward
+				//Meaning when the Key is hold down it goes forward
 				m_v2Velocity.y -= m_fSpeed * fDeltaTime;
 			}
 			if (IsKeyDown(KeyboardKey.KEY_S))
 			{
 				//Takes the answer from the multiplication and adds it to m_v2Velocity value
-				//Meaning when the Key is press it goes backwards
+				//Meaning when the Key is hold down it goes backwards
 				m_v2Velocity.y += m_fSpeed * fDeltaTime;
 			}
 			if (IsKeyDown(KeyboardKey.KEY_A))
