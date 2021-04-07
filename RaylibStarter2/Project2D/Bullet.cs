@@ -20,13 +20,15 @@ namespace Project2D
 
 		public override void Update(float fDeltaTime)
 		{
-			//Matrix3 translation = new Matrix3();
-			//translation.SetTranslation(m_v2Velocity * fDeltaTime);
-			//m_LocalTransform = m_LocalTransform * translation;
+			//Allows the bullet to move from it's position
+			Matrix3 translation = new Matrix3();
+			translation.SetTranslation(m_v2Velocity * fDeltaTime);
+			m_LocalTransform = m_LocalTransform * translation;
 
 			base.Update(fDeltaTime);
 		}
 
+		//Function that creates the gap between the turret and the bullet when fired so it doesn't collide with the Tank
 		public void OffSet()
 		{
 			m_LocalTransform.m7 -= m_LocalTransform.m4 * 60;

@@ -11,7 +11,7 @@ namespace Project2D
 {
 	class Tank : GameObject
 	{
-		//initializing the variables 
+		//Initializing the variables 
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
 		private Turret m_Turret = null;
@@ -52,7 +52,7 @@ namespace Project2D
 			if (IsKeyDown(KeyboardKey.KEY_A))
 			{
 				//Decides how fast the Tank will rotate left 
-				fRotation -= 20.0f * fDeltaTime;
+				fRotation -= 2.0f * fDeltaTime;
 			}
 			if (IsKeyDown(KeyboardKey.KEY_D))
 			{
@@ -60,7 +60,7 @@ namespace Project2D
 				fRotation += 2.0f * fDeltaTime;
 			}
 
-			//add velocity to our transforms
+			//Add velocity to our transforms
 			Matrix3 translation = new Matrix3();
 			translation.SetTranslation(m_v2Velocity * fDeltaTime);
 			m_LocalTransform = m_LocalTransform * translation;
@@ -81,7 +81,7 @@ namespace Project2D
 			//m_v2Velocity.x = 0;
 			//m_v2Velocity.y = 0;
 
-			//bounce off
+			//Bounce off
 			m_v2Velocity = m_v2Velocity * -1;
 
 			UpdateTransforms();

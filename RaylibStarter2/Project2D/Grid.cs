@@ -11,26 +11,30 @@ namespace Project2D
 {
 	class Grid : GameObject
 	{
+		//Initializing the variables 
 		private int m_nWidth;
 		private int m_nHeight;
+		//Creating a random number
 		private Random rnd = new Random();
 
 		public Grid(string Filename) : base(Filename)
 		{
-			m_LocalTransform.m7 = 400;
-			m_LocalTransform.m8 = 100;
 		}
 
 		public override void OnCollision(GameObject otherObj)
 		{
+			//Sets the range of the random number to the variables
 			m_nWidth = rnd.Next(50, 750);
 			m_nHeight = rnd.Next(50, 550);
 
+			//Set the new position of the Box when collided
 			m_LocalTransform.m7 = m_nWidth;
 			m_LocalTransform.m8 = m_nHeight;
 
+			//When collided add 1 to the score 
 			m_nScore++;
 
+			//Call the Function to Update when collided
 			UpdateTransforms();
 		}
 	}
