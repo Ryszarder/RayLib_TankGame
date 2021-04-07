@@ -11,8 +11,10 @@ namespace Project2D
 {
     class Game
     {
+		//Creates a new stopwatch variable
         Stopwatch stopwatch = new Stopwatch();
 
+		//Sets the variables to use for the stopwatch
         private long currentTime = 0;
         private long lastTime = 0;
         private float timer = 0;
@@ -21,6 +23,7 @@ namespace Project2D
 
         private float deltaTime = 0.005f;
 
+		//Gives the level class a member variable
 		private Level m_Level = null;
 
 		public Game()
@@ -29,11 +32,13 @@ namespace Project2D
 
         public void Init()
         {
+			//Runs the Start function on the stopwatch
             stopwatch.Start();
             lastTime = stopwatch.ElapsedMilliseconds;
 
             if (Stopwatch.IsHighResolution)
             {
+				//Writes in the console how many ticks per second
                 Console.WriteLine("Stopwatch high-resolution frequency: {0} ticks per second", Stopwatch.Frequency);
             }
 
@@ -60,25 +65,25 @@ namespace Project2D
             frames++;
 
 			//Update game objects here    
-
 			m_Level.Update(deltaTime);
 			m_Level.UpdateTransforms();
 			
 			//check collision after all objects have been updated
 			CollisionManager.CheckCollision();
-
-			//ScoreManager.SetScore();
 		}
 
         public void Draw()
         {
             BeginDrawing();
 
+			//Make the background colour of the program
             ClearBackground(RLColor.LIGHTGRAY);
 
 			//Draw game objects here
+			//Draws in the top left corner the fps counter display
             DrawText(fps.ToString(), 10, 10, 14, RLColor.BLUE);
 
+			//Draws the objects/variables in the Level class
 			m_Level.Draw();
 
 			EndDrawing();

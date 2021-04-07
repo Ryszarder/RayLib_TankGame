@@ -11,10 +11,12 @@ namespace Project2D
 {
 	class Level : GameObject
 	{
+		//Creates the variables of objects names
 		private Tank m_Tank = null;
 		//private TankEnemy m_TankEnemy = null;
 		private Grid m_Grid = null;
 
+		//Sets the object to fine it's location and draw it's sprite and set it as the parent
 		public Level() : base("")
 		{
 			m_Tank = new Tank("../Images/Tank.png");
@@ -23,6 +25,7 @@ namespace Project2D
 			//m_TankEnemy = new TankEnemy("../Images/TankE.png");
 			//m_TankEnemy.SetParent(this);
 
+			//Runs a for loop to draw 5 of the same object
 			for (int i = 0; i < 5; i++)
 			{
 				m_Grid = new Grid("../Images/Box.png");

@@ -11,41 +11,52 @@ namespace Project2D
 {
 	class Tank : GameObject
 	{
+		//initializing the variables 
 		private Vector2 m_v2Velocity;
 		private float m_fSpeed = 200.0f;
 		private Turret m_Turret = null;
 
 		public Tank(string Filename) : base(Filename)
 		{
+			//Sets the position in the game where the tank starts
 			m_LocalTransform.m7 = 400;
 			m_LocalTransform.m8 = 300;
 
+			//Sets it Velocity to 0 so it doesn't always move even when the key isn't pressed
 			m_v2Velocity.x = 0;
 			m_v2Velocity.y = 0;
 
+			//Creates the Turret object to be draw and set as the child of the Tank
 			m_Turret = new Turret("../Images/Turret.png");
 			m_Turret.SetParent(this);
 		}
 
 		public override void Update(float fDeltaTime)
 		{
+			//Set rotation to 0 so it won't always be rotating
 			float fRotation = 0.0f;
 
 			//update velocity via input
 			if (IsKeyDown(KeyboardKey.KEY_W))
 			{
+				//Takes the answer from the multiplication and takes it away from m_v2Velocity value
+				//Meaning when the Key is press it goes forward
 				m_v2Velocity.y -= m_fSpeed * fDeltaTime;
 			}
 			if (IsKeyDown(KeyboardKey.KEY_S))
 			{
+				//Takes the answer from the multiplication and adds it to m_v2Velocity value
+				//Meaning when the Key is press it goes backwards
 				m_v2Velocity.y += m_fSpeed * fDeltaTime;
 			}
 			if (IsKeyDown(KeyboardKey.KEY_A))
 			{
-				fRotation -= 2.0f * fDeltaTime;
+				//Decides how fast the Tank will rotate left 
+				fRotation -= 20.0f * fDeltaTime;
 			}
 			if (IsKeyDown(KeyboardKey.KEY_D))
 			{
+				//Decides how fast the Tank will rotate right 
 				fRotation += 2.0f * fDeltaTime;
 			}
 

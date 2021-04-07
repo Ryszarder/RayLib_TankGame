@@ -14,10 +14,12 @@ namespace Project2D
         {
             Game game = new Game();
 
+			//Set the width and height of the program
             InitWindow(800, 600, "Hello World");
 			
             game.Init();
 
+			//While the game is running loop through these functions
             while (!WindowShouldClose())
             {
                 game.Update();
