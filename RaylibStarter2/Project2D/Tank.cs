@@ -74,16 +74,14 @@ namespace Project2D
 
 		public override void OnCollision(GameObject otherObj)
 		{
+			//Sets the x-axis and y-axis of the Tank to the PrevPosition
 			m_LocalTransform.m7 = m_v2PrevPosition.x;
 			m_LocalTransform.m8 = m_v2PrevPosition.y;
-
-			//stop in place
-			//m_v2Velocity.x = 0;
-			//m_v2Velocity.y = 0;
 
 			//Bounce off
 			m_v2Velocity = m_v2Velocity * -1;
 
+			//Call the Function to Update when collided
 			UpdateTransforms();
 		}
 	}
